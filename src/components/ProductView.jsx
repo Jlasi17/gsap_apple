@@ -2,7 +2,8 @@ import React from 'react'
 import macstore from '../source'
 import clsx from "clsx"
 import { Canvas} from "@react-three/fiber";
-import {Box, OrbitControls} from "@react-three/drei";
+import {OrbitControls} from "@react-three/drei";
+import Mac14 from "./models/Macbook-14";
 
 const ProductView = () => {
     const {color,setColor,scale,setScale} = macstore();
@@ -35,7 +36,8 @@ const ProductView = () => {
             </div>
         </div>
        <Canvas id = 'canvas' camera = {{position : [0,2,5],fov:50,near:0.1 ,far:100}}>
-            <Box position = {[0,0,0]} scale = {scale *10} material-color = {color}/>
+            <ambientLight intensity={3}/>
+            <Mac14 scale ={0.06} position = {[0,0,0]}/>
             <OrbitControls enableZoom = {false}/>
        </Canvas>
     </section>
