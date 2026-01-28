@@ -2,17 +2,17 @@ import React from 'react'
 import macstore from '../source'
 import clsx from "clsx"
 import { Canvas} from "@react-three/fiber";
-import {OrbitControls} from "@react-three/drei";
-import Mac14 from "./models/Macbook-14";
-import Lights from './Lights';
+import Lights from './three/Lights';
+import ModelSwitch from './three/ModelSwitch';
+import {useMediaQuery} from "react-responsive";
 
 const ProductView = () => {
     const {color,setColor,scale,setScale} = macstore();
+    const isMobile = useMediaQuery({query : '(max-width: 1024px)'})
   return (
     <section id='product-viewer'>
         <h2>Take A Look At It!!</h2>
         <div className='controls'>
-            <p className='info'>Mac Book Pro {scale}" in {color} </p>
             <div className='flex-center gap-5 mt-5'>
                 <div className='color-control'>
                     <div 
@@ -38,8 +38,7 @@ const ProductView = () => {
         </div>
        <Canvas id = 'canvas' camera = {{position : [0,2,5],fov:50,near:0.1 ,far:100}}>
             <Lights/>
-            <Mac14 scale ={0.06} position = {[0,0,0]}/>
-            <OrbitControls enableZoom = {false}/>
+            <ModelSwitch scale= {isMobile ? scale - 0.03 : scale} isMobile = {isMobile}/>
        </Canvas>
     </section>
   )
