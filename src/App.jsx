@@ -3,6 +3,7 @@ import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import ProductView from './components/ProductView'
 import ShowCase from './components/ShowCase'
+import Performance from './components/Performace'
 import gsap from 'gsap';
 import {ScrollTrigger,SplitText} from "gsap/all";
 
@@ -14,6 +15,7 @@ const App = () => {
       <Hero/>
       <ProductView/>
       <ShowCase/>
+      <Performance/>
     </main>
 
   )
