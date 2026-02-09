@@ -4,7 +4,7 @@ import {features, featureSequence} from "../constants/index.js";
 import clsx from "clsx";
 import {Suspense, useEffect, useRef} from "react";
 import {Html} from "@react-three/drei";
-import Mac from "./models/Macbook.jsx";
+import Mac from "../../public/models/Macbook.jsx";
 import {useMediaQuery} from "react-responsive";
 import macstore from "../store/index.js";
 import {useGSAP} from "@gsap/react";
