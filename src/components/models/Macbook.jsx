@@ -16,7 +16,7 @@ import {useGLTF, useVideoTexture} from '@react-three/drei'
 
 export default function Mac(props) {
    const { color, texture, } = macstore();
-  const { nodes, materials, scene} = useGLTF('/models/macbook-transformed.glb')
+  const { nodes, materials, scene} = useGLTF(import.meta.env.BASE_URL +'/models/macbook-transformed.glb')
 
     const screen = useVideoTexture(texture)
 
@@ -57,4 +57,4 @@ export default function Mac(props) {
   )
 }
 
-useGLTF.preload('/models/macbook-transformed.glb')
+useGLTF.preload(import.meta.env.BASE_URL + '/models/macbook-transformed.glb')

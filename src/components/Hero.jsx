@@ -9,9 +9,9 @@ const Hero = () => {
     <section id='hero'>
         <div>
             <h1>Mac Book Pro</h1>
-            <img src='/title.png' alt='title'></img>
+            <img src={import.meta.env.BASE_URL + "/title.png"} alt='title'></img>
         </div>
-        <video ref ={vidref} src='/videos/hero.mp4' autoPlay muted playsInline></video>
+        <video ref ={vidref} src={import.meta.env.BASE_URL + "/videos/hero.mp4"} autoPlay muted playsInline></video>
         <button>Buy</button>
         <p>From £1000 or £120/mo for 12 months</p>
     </section>
